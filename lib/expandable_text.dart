@@ -40,15 +40,13 @@ class _ExpandableTextState extends State<ExpandableText> {
         child: Column(
           children: [
             Expandable(
-              collapsed: ExpandableButton(
-                child: Column(
-                  children: [
-                    Text(text, maxLines: maxLines, overflow: overflow, style: style),
-                    ExpandableButton(
-                      child: Text('打开', style: TextStyle(color: Colors.blue)),
-                    )
-                  ]
-                ),
+              collapsed: Column(
+                children: [
+                  Text(text, maxLines: maxLines, overflow: overflow, style: style),
+                  ExpandableButton(
+                    child: Text('打开', style: TextStyle(color: Colors.blue)),
+                  )
+                ]
               ),
               expanded: Column(
                 children: [
