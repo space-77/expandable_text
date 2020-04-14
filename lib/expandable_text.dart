@@ -29,12 +29,13 @@ class _ExpandableTextState extends State<ExpandableText> {
     return LayoutBuilder(builder: (context, size) {
       final span = TextSpan(text: text, style: style);
       final tp = TextPainter(
-        text: span, maxLines: maxLines,
+        text: span,
+        maxLines: maxLines,
         textDirection: TextDirection.ltr
       );
       tp.layout(maxWidth: size.maxWidth);
  
-      if (tp.didExceedMaxLines) {
+      if (tp.didExceedMaxLines) { // 判断文字是否溢出
         return ExpandableNotifier(
         child: Column(
           children: [
